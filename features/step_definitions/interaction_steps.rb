@@ -1,3 +1,4 @@
+#still fairly confused with the syntax of all this, but understand that this is the guts of what cucumber is using to run its tests...i think?
 Given /^I (?:click|press) "(.*?)"$/ do |link_text|
   click_link_or_button link_text
 end

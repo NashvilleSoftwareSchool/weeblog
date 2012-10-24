@@ -1,6 +1,7 @@
+
 def path_to(page_name)
-  case page_name
-  when /^the home\s?page$/
+  case page_name #case?
+  when /^the home\s?page$/#?????
     '/'
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
@@ -8,7 +9,8 @@ def path_to(page_name)
   end
 end
 
-# When I go to someplace # page_name => someplace
+# When I go to someplace # page_name => someplace 
+# What is the difference between interaction_steps and path_steps
 When /^I go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
