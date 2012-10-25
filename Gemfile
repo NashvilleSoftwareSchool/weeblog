@@ -21,4 +21,5 @@ end
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'shoulda'
 end

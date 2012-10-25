@@ -11,9 +11,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
-    @post.save
-    flash[:notice] = "Your post has been published."
-    redirect_to @post
+    if @post.save
+      flash[:notice] = "Your post has been published."
+      redirect_to @post
+    else
+      flash[:error] = "Your post couldn't be saved. #{@post.errors.full_messages.join}"
+      render :new
+    end
   end
   # edit
   # update

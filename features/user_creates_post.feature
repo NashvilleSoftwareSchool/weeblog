@@ -18,10 +18,26 @@ Feature: User creates post
     And I should see the title "My thoughts are grand"
     And I should see "Actually, they aren't"
 
-  @wip
   Scenario: User attempts to skip title
-    Given this is pending
+    Given I am on the homepage
+    And I click "Write Post"
+    Then I should see "Fill in your blog post here"
+    When I fill in "" for "Title"
+    And I fill in "Actually, they aren't" for "Body"
+    And I press "Publish"
+    Then I should not see "Your post has been published"
+    And I should see "" in the "Title" field
+    And I should see "Actually, they aren't" in the "Body" field
+    And I should see "Title can't be blank"
 
-  @wip
   Scenario: User attempts to skip body
-    Given this is pending
+    Given I am on the homepage
+    And I click "Write Post"
+    Then I should see "Fill in your blog post here"
+    When I fill in "This is a title" for "Title"
+    And I fill in "" for "Body"
+    And I press "Publish"
+    Then I should not see "Your post has been published"
+    And I should see "This is a title" in the "Title" field
+    And I should see "" in the "Body" field
+    And I should see "Body can't be blank"
