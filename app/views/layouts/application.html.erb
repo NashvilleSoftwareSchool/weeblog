@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>Weeblog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %> <!--"application refers to what? media...confusion-->
-  <%= javascript_include_tag "application" %><!--confusion-->
-  <%= csrf_meta_tags %><!--confusion-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%- flash.each do |type, message| %><!--confusion: what is flash?-->
+<%- flash.each do |type, message| %>
   <p>There was an <%= type %> for you. <%= message %></p>
 <%- end %>
 

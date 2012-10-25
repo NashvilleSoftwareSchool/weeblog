@@ -2,17 +2,17 @@ class PostsController < ApplicationController
   # index
 
   def show
-    @post = Post.find(params[:id])#I'm gussing this finds posts by the parameter id? show.@post????
+    @post = Post.find(params[:id])
   end
 
   def new
-    @post = Post.new#here's a new post?
+    @post = Post.new
   end
 
-  def create #creates a new post
+  def create
     @post = Post.new(params[:post])
     @post.save
-    flash[:notice] = "Your post has been published." #flash confuses me
+    flash[:notice] = "Your post has been published."
     redirect_to @post
   end
   # edit

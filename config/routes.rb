@@ -1,7 +1,7 @@
 Weeblog::Application.routes.draw do
   root to: "public#index"
 
-  resources :posts, only: [:new, :create, :show] #resources refers to what? is that like require?
+  resources :posts, only: [:new, :create, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
