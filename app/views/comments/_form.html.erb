@@ -1,0 +1,8 @@
+<h2>Have a thought? Comment here!</h2>
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.label :commenter %>
+  <%= f.text_field :commenter %>
+  <%= f.label :message %>
+  <%= f.text_field :message %>
+  <%= f.submit %>
+<%- end %>
