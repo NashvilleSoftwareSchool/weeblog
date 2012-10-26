@@ -1,7 +1,7 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
-      t.references :post_id
+      t.references :post
       t.string :commenter
       t.text :message
 
