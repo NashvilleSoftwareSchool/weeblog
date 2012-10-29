@@ -1,5 +1,9 @@
 Given /^there is a blog post$/ do
-  @post = Post.new(title: "blog post", body: "blog body")
+  step %{I have a post with title "blog post" and body "blog body"}
+end
+
+Given /^I have a post with title "(.*?)" and body "(.*?)"$/ do |title, body|
+  @post = Post.new(title: title, body: body)
   @post.save!
 end
 
