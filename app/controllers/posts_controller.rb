@@ -23,7 +23,18 @@ class PostsController < ApplicationController
       render :new
     end
   end
-  # edit
-  # update
-  # destroy
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      redirect_to @post
+    else
+      flash[:error] = @post.errors.full_messages.join
+      render :edit
+    end
+  end
 end

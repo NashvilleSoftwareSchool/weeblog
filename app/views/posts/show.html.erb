@@ -1,5 +1,6 @@
 <%= link_to "View All Posts", :root %>
 <%= render @post %>
+<%= link_to "Edit Post", edit_post_path(@post) %>
 <hr />
 <%= render @post.comments %>
 <hr />
