@@ -41,35 +41,3 @@ Feature: User creates post
     And I should see "This is a title" in the "Title" field
     And I should see "" in the "Body" field
     And I should see "Body can't be blank"
-
-  Scenario: User creates two posts and views from home page
-    Given I am on the homepage
-    And I click "Write Post"
-    Then I should see "Fill in your blog post here"
-    When I fill in "My thoughts are grand" for "Title"
-    And I fill in "Actually, they aren't" for "Body"
-    And I press "Publish"
-    Then I should see "Your post has been published"
-    And I should see the title "My thoughts are grand"
-    And I should see "Actually, they aren't"
-    And I click "Home Page"
-    And I should see the title "My thoughts are grand"
-    And I should see "Actually, they aren't"
-    Given I am on the homepage
-    And I click "Write Post"
-    Then I should see "Fill in your blog post here"
-    When I fill in "My thoughts are grand" for "Title"
-    And I fill in "Actually, they aren't" for "Body"
-    And I press "Publish"
-    Then I should see "Your post has been published"
-    And I should see the title "My thoughts are grand"
-    And I should see "Actually, they aren't"
-    And I click "Home Page"
-    And I should see the title "My thoughts are grand"
-    And I should see "Actually, they aren't"
-    And I should see the title "My thoughts are grand"
-    And I should see "Actually, they aren't"
-
-
-
-
