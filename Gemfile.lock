@@ -61,6 +61,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fabrication (2.5.0)
     ffi (1.1.5)
     gherkin (2.11.5)
       json (>= 1.4.6)
@@ -160,6 +161,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
+  fabrication
   jquery-rails
   pg
   rails (= 3.2.8)

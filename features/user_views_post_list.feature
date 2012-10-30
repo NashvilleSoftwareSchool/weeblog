@@ -1,8 +1,10 @@
 Feature: User view post list
 
   Scenario:
-    Given I have a post with title "Foo" and body "Foo Bar"
-    And I have a post with title "Hello" and body "Hello, World"
+    Given the following posts:
+      | title | body         |
+      | Foo   | Foo Bar      |
+      | Hello | Hello, World |
     When I go to the homepage
     Then I should see the title "Foo"
     And I should see "Bar"
@@ -10,7 +12,9 @@ Feature: User view post list
     And I should see "World"
 
   Scenario: Linking to/from post show page
-    Given I have a post with title "Foo" and body "Foo Bar"
+    Given the following post:
+      | title | Foo     |
+      | body  | Foo Bar |
     And I am on the homepage
     When I click "Foo"
     Then I should be on that blog post's page

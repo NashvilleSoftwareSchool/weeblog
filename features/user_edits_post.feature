@@ -1,7 +1,9 @@
 Feature: User edits post
 
   Background:
-    Given I have a post with title "Foo" and body "Bar"
+    Given the following post:
+      | title | Foo |
+      | body  | Bar |
     And I am on that blog post's page
 
   Scenario: Successful edit

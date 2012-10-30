@@ -15,6 +15,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'fabrication'
   gem 'rspec-rails'
 end
 
