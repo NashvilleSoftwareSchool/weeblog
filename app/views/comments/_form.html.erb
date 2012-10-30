@@ -1,8 +1,8 @@
-<div class="commentName">Have a thought? Comment here!</div>
+<h2>Have a thought? Comment here!</h2>
 <%= form_for [@post, @comment] do |f| %>
-  <%= f.label :commenter %><br>
-  <%= f.text_field :commenter %><br>
-  <%= f.label :message %><br>
-  <%= f.text_field :message %><br><br>
+  <%= f.label :commenter %>
+  <%= f.text_field :commenter %>
+  <%= f.label :message %>
+  <%= f.text_field :message %>
   <%= f.submit %>
 <%- end %>
