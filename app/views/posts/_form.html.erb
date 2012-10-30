@@ -1,7 +1,11 @@
+<%= stylesheet_link_tag "application" %>
+<div id="hdr"></div>
+<%= link_to 'Home Page', :root %>
+<h1>Fill in your blog post here:</h1>
 <%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :body %><br>
+  <%= f.text_field :body %><br><br>
   <%= f.submit submit_text %>
 <%- end %>
