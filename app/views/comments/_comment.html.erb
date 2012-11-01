@@ -1,1 +1,7 @@
-<p><%= comment.commenter %> says: <%= comment.message %></p>
+<div class="comment_<%= comment.id %>">
+  <p><%= comment.commenter %> says: <%= comment.message %> <%= link_to_function "Reply to #{comment.commenter}", "$('.replyform').slideToggle();" %></p>
+  <div class="replyform" style="display:none;">
+    <h4>Reply to comment</h4>
+    <%= render partial: 'comments/form', locals: { submit_text: "Post Reply", comment: comment.replies.build } %>
+  </div>
+</div>

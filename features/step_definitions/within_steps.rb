@@ -5,6 +5,9 @@ def selector_for(description)
   case description
   when "the results section"
     'section.results'
+  when /(.*)'s comment/
+      comment = Comment.find_by_commenter($1)
+      ".comment_#{comment.id}"
   else
     description.gsub('"','')
   end
