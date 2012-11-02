@@ -2,7 +2,7 @@
 <%= render @post %>
 <%= link_to "Edit Post", edit_post_path(@post) %>
 <hr />
-<%= render @post.comments %>
+<ul><%= render @post.parent_comments %></ul>
 <hr />
 <h2>Have a thought? Comment here!</h2>
 <%= render partial: 'comments/form', locals: { submit_text: "Create Comment", comment: @comment } %>

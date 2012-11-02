@@ -1,20 +1,16 @@
 class PostsController < ApplicationController
 
+  before_filter :lookup_post
+
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
   end
 
-  def new
-    @post = Post.new
-  end
-
   def create
-    @post = Post.new(params[:post])
     if @post.save
       flash[:notice] = "Your post has been published."
       redirect_to @post
@@ -24,17 +20,22 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
-
   def update
-    @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       redirect_to @post
     else
       flash[:error] = @post.errors.full_messages.join
       render :edit
+    end
+  end
+
+  protected
+
+  def lookup_post
+    if params[:id]
+      @post = Post.find(params[:id])
+    else
+      @post = Post.new(params[:post])
     end
   end
 end
