@@ -1,0 +1,38 @@
+@import "bourbon";
+@import url(http://fonts.googleapis.com/css?family=Sanchez|Open+Sans:300italic,400italic,400,300,600,700);
+
+$primary: #bada55;
+$secondary: #C15C05;
+$accent: #50BBED;
+// $font
+
+section#main {
+  padding: 1em;
+}
+
+header {
+  // background-color: $primary;
+  @include background(radial-gradient($primary, $accent) left repeat);
+  padding: 1em;
+  h1#title {
+    font-family: 'Sanchez', serif;
+    font-weight: normal;
+    margin: 0;
+    span.wee {
+      text-transform: lowercase;
+      font-style: italic;
+    }
+    span.blog {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  h2#tagline {
+    margin: 0;
+    color: $secondary;
+    font-size: 14px;
+  }
+}
+
+body { font-family: 'Open Sans', sans-serif; }

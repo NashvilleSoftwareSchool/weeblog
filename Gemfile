@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bourbon'
 gem 'jquery-rails'
 gem 'rails', '3.2.8'
 gem 'pg'
