@@ -14,6 +14,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem "rails-boilerplate"
+end
+
 group :test, :development do
   gem 'fabrication'
   gem 'rspec-rails'
