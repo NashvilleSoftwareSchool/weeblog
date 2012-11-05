@@ -1,4 +1,3 @@
-@wip
 Feature: User can reply to comments
 
   Scenario: Successful post
@@ -7,7 +6,6 @@ Feature: User can reply to comments
       | commenter | Bob               |
       | message   | This is terrible. |
     And I am on that blog post's page
-    # And show me the page
     When I click "Reply to Bob" within Bob's comment
     And I fill in "Eliza" for "Name" within Bob's comment
     And I fill in "Untrue." for "Comment" within Bob's comment
