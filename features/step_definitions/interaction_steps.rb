@@ -18,6 +18,10 @@ When /^I fill in "(.*?)" for "(.*?)"$/ do |text, field_label|
   page.fill_in field_label, with: text
 end
 
+Then /^the "(.*?)" field should contain "(.*?)"$/ do |field_name, text|
+  step %{I should see "#{text}" in the "#{field_name}" field}
+end
+
 Then /^I should see "(.*?)" in the "(.*?)" field$/ do |text, field_name|
   field = find_field(field_name)
   field_value = (field.tag_name == 'textarea') ? field.text : field.value
