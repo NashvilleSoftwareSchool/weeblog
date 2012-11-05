@@ -11,8 +11,7 @@ section#main {
 }
 
 header {
-  // background-color: $primary;
-  @include background(radial-gradient($primary, $accent) left repeat);
+  background-color: $accent;
   padding: 1em;
   h1#title {
     font-family: 'Sanchez', serif;
@@ -30,8 +29,15 @@ header {
 
   h2#tagline {
     margin: 0;
-    color: $secondary;
     font-size: 14px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      display: inline;
+    }
   }
 }
 
