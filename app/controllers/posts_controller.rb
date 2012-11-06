@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post.author = current_user
     if @post.save
       flash[:notice] = "Your post has been published."
       redirect_to @post
