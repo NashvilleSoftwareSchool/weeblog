@@ -7,6 +7,9 @@ Feature: User creates post
   * Post must have title and body
   * Post must be publicly visible once saved
 
+  Background:
+    Given I am signed in
+
   Scenario: Happy Path
     Given I am on the homepage
     And I click "Write Post"
