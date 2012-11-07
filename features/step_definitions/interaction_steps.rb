@@ -25,5 +25,5 @@ end
 Then /^I should see "(.*?)" in the "(.*?)" field$/ do |text, field_name|
   field = find_field(field_name)
   field_value = (field.tag_name == 'textarea') ? field.text : field.value
-  field_value.should == text
+  field_value.to_s.should == text.to_s
 end
