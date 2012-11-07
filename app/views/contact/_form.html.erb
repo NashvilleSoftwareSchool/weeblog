@@ -1,0 +1,10 @@
+<%= form_tag(contact_index_path, :method => 'post') do %>
+  <%= label_tag :from %>
+  <%= text_field_tag :from, params[:from] %>
+  <%= label_tag :subject %>
+  <%= text_field_tag :subject, params[:subject]  %>
+  <%= label_tag :message %>
+  <%= text_field_tag :message, params[:message]  %>
+  <%= submit_tag 'Send Email' %>
+<%- end %>
+
