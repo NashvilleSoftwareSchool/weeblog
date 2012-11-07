@@ -6,6 +6,12 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  # def rss
+  #   @posts = Post.find(:all, :order => "id DESC", :limit => 10)
+  #   render :layout => false
+  #   response.headers["Content-Type"] = "application/xml; charset=utf-8"
+  # end
+
   def show
     @comment = Comment.new
   end
@@ -39,4 +45,12 @@ class PostsController < ApplicationController
       @post = Post.new(params[:post])
     end
   end
+
+  # def rss_post
+   #  @posts = Post.all(:select => "title, author, id, content, posted_at", :order => "posted_at DESC", :limit => 20) 
+   #  respond_to do |format|
+   # format.rss { render :layout => false }
+  #   end
+  # end
+
 end
