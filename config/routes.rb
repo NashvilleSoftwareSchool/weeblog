@@ -7,6 +7,9 @@ Weeblog::Application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  match 'feed' => 'feed#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
