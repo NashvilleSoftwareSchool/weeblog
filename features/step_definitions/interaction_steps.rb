@@ -18,6 +18,10 @@ When /^I fill in "(.*?)" for "(.*?)"$/ do |text, field_label|
   page.fill_in field_label, with: text
 end
 
+When /^I select "(.*)" from "(.*)"$/ do |value, field|
+  select(value, :from => field)
+end
+
 Then /^the "(.*?)" field should contain "(.*?)"$/ do |field_name, text|
   step %{I should see "#{text}" in the "#{field_name}" field}
 end
