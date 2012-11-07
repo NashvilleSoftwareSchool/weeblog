@@ -1,6 +1,6 @@
 <h1><%= link_to post.title, post %></h1>
 <h4>By: <%= post.author.email %></h4>
-<% if user_signed_in? %>
+<% if user_signed_in? && post.author_id == current_user.id %>
   <%= link_to "Delete this post", post, method: :delete, data: { confirm: "Are you sure?" }, title: post.title %>
 <% end %>
 <p><%= post.body %></p>
