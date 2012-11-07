@@ -3,9 +3,12 @@ Weeblog::Application.routes.draw do
 
   root to: "posts#index"
 
+ resources :contact, only: [:index, :create]
   resources :posts, except: [:destroy] do
     resources :comments, only: [:create]
   end
+
+  # match 'contact', :to => redirect('contact/index.html.erb')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
