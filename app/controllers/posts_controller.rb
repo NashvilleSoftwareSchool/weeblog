@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :lookup_post
 
   def index
-    @posts = Post.all
+    @posts = Post.scoped
   end
 
   def show
@@ -13,7 +13,11 @@ class PostsController < ApplicationController
   def create
     @post.author = current_user
     if @post.save
-      flash[:notice] = "Your post has been published."
+      if @post.published?
+        flash[:notice] = "Your post has been published."
+      else
+        flash[:notice] = "Your post has been scheduled. It will be published on #{@post.publish_date}"
+      end
       redirect_to @post
     else
       flash[:error] = "Your post couldn't be saved. #{@post.errors.full_messages.join}"
