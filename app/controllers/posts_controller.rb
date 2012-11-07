@@ -30,6 +30,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    redirect_to root_url, :notice => "Your post has been deleted"
+  end
+
   protected
 
   def lookup_post

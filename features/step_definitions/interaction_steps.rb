@@ -14,6 +14,10 @@ Then /^I should see the title "(.*?)"$/ do |title_text|
   page.should have_css("h1, h2", text: title_text)
 end
 
+Then /^I should not see the title "(.*?)"$/ do |title_text|
+  page.should_not have_css("h1, h2", text: title_text)
+end
+
 When /^I fill in "(.*?)" for "(.*?)"$/ do |text, field_label|
   page.fill_in field_label, with: text
 end

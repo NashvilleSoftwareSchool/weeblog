@@ -16,6 +16,10 @@ Given /^I am signed in$/ do
   sign_in_as @user
 end
 
+Given /^I am not signed in$/ do
+  @user = nil
+end
+
 def sign_in_as user
   steps %Q{
     Given I am on the homepage
