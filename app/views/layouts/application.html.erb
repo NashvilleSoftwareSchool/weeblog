@@ -45,7 +45,7 @@
     <ul>
       <%- if user_signed_in? %>
         <li><%= link_to "Write Post", new_post_path %></li>
-        <li><%= link_to "Write Page", '#' %></li>
+        <li><%= link_to "Write Page", new_page_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
       <%- else %>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
