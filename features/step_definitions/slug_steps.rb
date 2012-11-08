@@ -3,7 +3,7 @@ Then /^my URL slug should be "(.*?)"$/ do |url|
   if current_path.respond_to? :should
     current_path.should == "/posts/#{url}"
     else
-      assert_equal path_to(url), current-path
+      assert_equal path_to(url), current_path
   end
 end
 
