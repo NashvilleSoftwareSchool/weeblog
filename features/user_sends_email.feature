@@ -20,6 +20,7 @@ Feature: User sends email
     Then save and open all raw emails
     And "ben2d2@gmail.com" should receive 1 email with subject "This is a subject"
 
+
   Scenario: User attempts to skip name
     Given I am on the homepage
     And I click "Contact Us"
@@ -36,6 +37,7 @@ Feature: User sends email
     And I should see "This is a message" in the "Body" field
     And I should see "Your message could not be sent. Please make sure you have completed all fields."
  
+  
   Scenario: User attempts to skip email
     Given I am on the homepage
     And I click "Contact Us"
@@ -52,6 +54,7 @@ Feature: User sends email
     And I should see "This is a message" in the "Body" field
     And I should see "Your message could not be sent. Please make sure you have completed all fields."
 
+ 
   Scenario: User attempts to skip subject
     Given I am on the homepage
     And I click "Contact Us"
@@ -67,7 +70,8 @@ Feature: User sends email
     And I should see "" in the "Subject" field
     And I should see "This is a message" in the "Body" field
     And I should see "Your message could not be sent. Please make sure you have completed all fields."
-@wip
+
+  
   Scenario: User attempts to skip message
     Given I am on the homepage
     And I click "Contact Us"
@@ -85,7 +89,6 @@ Feature: User sends email
     And I should see "Your message could not be sent. Please make sure you have completed all fields."
 
 
-@wip
  Scenario: User attempts to enter invalid email
     Given I am on the homepage
     And I click "Contact Us"

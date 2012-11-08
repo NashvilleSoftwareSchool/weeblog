@@ -17,13 +17,22 @@ class ContactController < ApplicationController
     if params[:name].blank? || params[:email].blank? || params[:subject].blank? || params[:body].blank?
       flash[:notice] = "Your message could not be sent. Please make sure you have completed all fields."
       render :index
+
     elsif !email_valid?
       flash[:notice] = "Please type a valid email address"
       render :index
     else
-    MailSender.contact_form(params).deliver
-      flash[:success] = "Your email was sent successfully"  
-      redirect_to contact_index_path
+      if verify_recaptcha()
+        MailSender.contact_form(params).deliver
+        flash[:success] = "Your email was sent successfully"  
+        redirect_to contact_index_path
+
+      else
+        flash.delete(:recaptcha_error)
+        flash[:recaptcha] = "Are you a human? Please try completing reCaptcha again."
+        render :index
+
+      end
     end    
   end
 end
