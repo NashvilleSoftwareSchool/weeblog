@@ -1,16 +1,15 @@
 <%= link_to "View All Posts", :root %>
 <%= render @post %>
-
-<%= form_for @image, url: post_images_path(@post), html: { multipart: true } do |f| %>
-  <%= f.file_field :image %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit "Submit" %>
-<%- end %>
-
+<% if @post.video_title %>
+    <div class="video">
+      <%= link_to @post.video_title, @post.video_url.to_s %>
+    </div>
+  <div class="clear"></div>
+<% end %>
 <%= link_to "Edit Post", edit_post_path(@post) %>
 <hr />
 <ul><%= render @post.parent_comments %></ul>
 <hr />
 <h2>Have a thought? Comment here!</h2>
 <%= render partial: 'comments/form', locals: { submit_text: "Create Comment", comment: @comment } %>
+

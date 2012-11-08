@@ -19,14 +19,14 @@ Feature: User creates post and uploads media
     Then I should see "Fill in your blog post here"
     When I fill in "My thoughts are grand" for "Title"
     And I fill in "Actually, they aren't" for "Body"
+    #And I attach "/Users/sam/Desktop/myfile.mov" to "post_image"
+    And I fill in "Nature title" for "Video title"
+    And I fill in "http://www.youtube.com/watch?v=lHjttmgiW6E" for "post_video_url"
     And I press "Publish"
     Then I should see "Your post has been published"
     And I should see the title "My thoughts are grand"
     And I should see "Actually, they aren't"
-    And show me the page
-    And I attach "/Users/sam/Desktop/myfile.mov" to "media_media"
-    And I fill in "My video" for "Title"
-    Then I should see "Your post has been published"
-    And I should see the title "My thoughts are grand"
-    And I should see "Actually, they aren't"
-    And I should see my video
+    And I should see "Nature title"
+    #Then I should see the video "http://www.youtube.com/watch?v=lHjttmgiW6E"
+    
+    

@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :body, :title
+  attr_accessible :body, :title, :image, :video_title, :video_url
 
   validates_presence_of :title, :body, :author
 

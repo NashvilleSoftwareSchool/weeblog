@@ -27,3 +27,21 @@ Then /^I should see "(.*?)" in the "(.*?)" field$/ do |text, field_name|
   field_value = (field.tag_name == 'textarea') ? field.text : field.value
   field_value.should == text
 end
+
+And /^I attach "(.*?)" to "(.*?)"$/ do |attached_file, locator|
+  page.attach_file(locator, attached_file)
+  #attach_file('Image', '/path/to/image.jpg')
+end
+
+
+Then /^I should see my video$/ do 
+  page.has_content?('View Video')
+end
+
+Then /^I should see the image "(.*?)" in "(.*?)" the CSS$/ do |content, css|
+  find('img')['src'].should == "http://www.google.com/logo.png"
+end
+
+Then /^I should see the video "(.*?)"$/ do |content|
+  find('a')['href'].should == content
+end
