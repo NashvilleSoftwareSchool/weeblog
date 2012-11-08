@@ -2,6 +2,7 @@ class ContactController < ApplicationController
 
   def index
     if request.method == 'GET'
+      flash.clear
       render
     else
       create
@@ -10,8 +11,8 @@ class ContactController < ApplicationController
 
 
  def create
-    if params[:from].blank? || params[:subject].blank? || params[:message].blank?
-      flash[:notice] = "Your message could not be sent. PLease make sure you have completed all fields."
+    if params[:name].blank? || params[:email].blank? || params[:subject].blank? || params[:body].blank?
+      flash[:notice] = "Your message could not be sent. Please make sure you have completed all fields."
       render :index
     else
     MailSender.contact_form(params).deliver
