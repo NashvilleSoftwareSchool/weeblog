@@ -2,7 +2,7 @@ class ContactController < ApplicationController
 
   def index
     if request.method == 'GET'
-      flash.clear
+      # flash.clear #this fails Happy Path test
       render
     else
       create
