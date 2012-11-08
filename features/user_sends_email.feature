@@ -67,7 +67,7 @@ Feature: User sends email
     And I should see "" in the "Subject" field
     And I should see "This is a message" in the "Body" field
     And I should see "Your message could not be sent. Please make sure you have completed all fields."
-
+@wip
   Scenario: User attempts to skip message
     Given I am on the homepage
     And I click "Contact Us"
@@ -83,3 +83,21 @@ Feature: User sends email
     And I should see "This is a subject" in the "Subject" field
     And I should see "" in the "Body" field
     And I should see "Your message could not be sent. Please make sure you have completed all fields."
+
+
+@wip
+ Scenario: User attempts to enter invalid email
+    Given I am on the homepage
+    And I click "Contact Us"
+    Then I should see "Fill in your email here"
+    When I fill in "Ben" for "Name"
+    When I fill in "ben@example" for "Email"
+    And I fill in "This is a subject" for "Subject"
+    And I fill in "This is a message" for "Body"
+    And I press "Send Email"
+    Then I should not see "Your was sent successfully"
+    And I should see "Ben" in the "Name" field
+    And I should see "ben@example" in the "Email" field
+    And I should see "This is a subject" in the "Subject" field
+    And I should see "This is a message" in the "Body" field
+    And I should see "Please type a valid email address"

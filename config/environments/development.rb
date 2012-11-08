@@ -36,3 +36,4 @@ Weeblog::Application.configure do
   config.assets.debug = true
 end
 ActionMailer::Base.delivery_method = :smtp
+
