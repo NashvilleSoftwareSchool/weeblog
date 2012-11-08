@@ -20,6 +20,12 @@ Given /^I am not signed in$/ do
   @user = nil
 end
 
+Given "I am signed in as a user that did not write the post" do
+  post = Post.last
+  @user = User.where("id != ?", post.author_id).first || Fabricate(:user)
+  sign_in_as @user
+end
+
 def sign_in_as user
   steps %Q{
     Given I am on the homepage
