@@ -6,7 +6,7 @@ Feature: User sends email
   Acceptance Criteria:
   * Email must have Email, subject and message
   * Email must sent to the given recipient
-@wip
+
   Scenario: Happy Path
     Given I am on the homepage
     And I click "Contact Us"
