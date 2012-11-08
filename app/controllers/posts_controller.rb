@@ -8,6 +8,9 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    if request.path != post_path(@post)
+      redirect_to @post, status: :moved_permanently
+    end
   end
 
   def create

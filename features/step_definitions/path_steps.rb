@@ -4,6 +4,8 @@ def path_to(page_name)
     '/'
   when "that blog post's page"
     post_path(@post)
+  when /"([^"]*)"/
+    $1
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"
