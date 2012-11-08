@@ -68,3 +68,5 @@ Weeblog::Application.configure do
 end
 
 ActionMailer::Base.delivery_method = :smtp
+
+
