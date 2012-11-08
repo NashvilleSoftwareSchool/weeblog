@@ -5,6 +5,7 @@ Weeblog::Application.routes.draw do
 
   resources :posts, except: [:destroy] do
     resources :comments, only: [:create]
+    resources :images, only: [:create]
   end
 
   # The priority is based upon order of creation:

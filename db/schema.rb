@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106174159) do
+ActiveRecord::Schema.define(:version => 20121108143858) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -22,12 +22,30 @@ ActiveRecord::Schema.define(:version => 20121106174159) do
     t.integer  "parent_comment_id"
   end
 
+  create_table "images", :force => true do |t|
+    t.string   "title"
+    t.integer  "post_id"
+    t.string   "path"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "media", :force => true do |t|
+    t.string   "title"
+    t.string   "path"
+    t.string   "media"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "author_id"
+    t.integer  "image_id"
+    t.string   "image"
   end
 
   create_table "users", :force => true do |t|

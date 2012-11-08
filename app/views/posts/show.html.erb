@@ -1,5 +1,13 @@
 <%= link_to "View All Posts", :root %>
 <%= render @post %>
+
+<%= form_for @image, url: post_images_path(@post), html: { multipart: true } do |f| %>
+  <%= f.file_field :image %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit "Submit" %>
+<%- end %>
+
 <%= link_to "Edit Post", edit_post_path(@post) %>
 <hr />
 <ul><%= render @post.parent_comments %></ul>

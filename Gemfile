@@ -5,6 +5,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'rails', '3.2.8'
 gem 'pg'
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.
