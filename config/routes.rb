@@ -8,6 +8,7 @@ Weeblog::Application.routes.draw do
   end
 
   resources :pages
+  match 'feed' => 'feed#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

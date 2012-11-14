@@ -1,5 +1,7 @@
 def path_to(page_name)
   case page_name
+  when "the rss feed page"
+    "/feed.rss"
   when /^the home\s?page$/
     '/'
   when "that blog post's page"
