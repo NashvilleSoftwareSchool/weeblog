@@ -1,4 +1,3 @@
-@wip
 Feature: User can schedule posts for a future date
   As a user
   In order to share my thoughts with the world
