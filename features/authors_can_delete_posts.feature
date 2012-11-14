@@ -8,7 +8,7 @@ Feature: Authors can delete posts
     Then I should see "Your post has been deleted"
     And I should be on the homepage
     And I should not see the title "foo"
-    And I should not see "Foo Bar"
+    And I should not see "bar"
 
   Scenario: I cannot delete posts if I am not signed in
     Given I am not signed in

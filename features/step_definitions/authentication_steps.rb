@@ -17,7 +17,7 @@ Given /^I am signed in$/ do
 end
 
 Given /^I am not signed in$/ do
-  @user = nil
+  delete destroy_user_session_path
 end
 
 Given "I am signed in as a user that did not write the post" do
