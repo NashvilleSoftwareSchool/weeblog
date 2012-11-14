@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :lookup_post
 
   def index
-    @posts = Post.scoped
+    @posts = Post.published
   end
 
   def show
