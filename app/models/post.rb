@@ -1,7 +1,10 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+
   attr_accessible :body, :title
 
-  validates_presence_of :title, :body, :author
+  validates_presence_of :title, :body, :author, :slug
 
   belongs_to :author, class_name: "User"
   has_many :comments

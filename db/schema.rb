@@ -22,13 +22,27 @@ ActiveRecord::Schema.define(:version => 20121108170416) do
     t.integer  "parent_comment_id"
   end
 
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "author_id"
+    t.string   "slug"
   end
+
+  add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",              :default => "", :null => false

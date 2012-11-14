@@ -3,7 +3,9 @@ def path_to(page_name)
   when /^the home\s?page$/
     '/'
   when "that blog post's page"
-    post_path(@post)
+    post_path(@post.reload)
+  when /"([^"]*)"/
+    $1
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"
