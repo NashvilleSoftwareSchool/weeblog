@@ -1,11 +1,13 @@
 Weeblog::Application.routes.draw do
   devise_for :users
-
+ 
   root to: "posts#index"
 
   resources :posts, except: [:destroy] do
     resources :comments, only: [:create]
   end
+
+  resources :pages
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
