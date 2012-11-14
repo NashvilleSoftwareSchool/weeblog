@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121108170416) do
     t.datetime "updated_at", :null => false
     t.integer  "author_id"
     t.string   "slug"
+    t.string   "tag"
   end
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true

@@ -1,3 +1,8 @@
 <h1><%= link_to post.title, post %></h1>
-<h4>By: <%= post.author.try(:email) %></h4>
+<h4>By: <%= post.author.email %></h4>
+<%- if post.tag? %>
+	<h4> Tagged as <%= post.tag %></h4>
+	<%- else %>
+	<%= "" %>
+	<%- end %>
 <p><%= post.body %></p>
