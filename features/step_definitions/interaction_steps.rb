@@ -29,6 +29,6 @@ Then /^I should see "(.*?)" in the "(.*?)" field$/ do |text, field_name|
   # Capybara does not remove the line break
   # https://github.com/jnicklas/capybara/issues/677
   # We are fixing it locally by removing the first character
-  field_value = (field.tag_name == 'textarea') ? field.text[1..-1] || "" : field.value
+  field_value = (field.tag_name == 'textarea') ? field.text.lstrip || "" : field.value
   field_value.should == text
 end

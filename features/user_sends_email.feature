@@ -35,7 +35,7 @@ Feature: User sends email
     And I should see "ben@example.com" in the "Email" field
     And I should see "This is a subject" in the "Subject" field
     And I should see "This is a message" in the "Body" field
-    And I should see "Your message could not be sent. Please make sure you have completed all fields."
+    And I should see "Your email couldn't be sent. Name can't be blank"
  
   
   Scenario: User attempts to skip email
@@ -69,7 +69,7 @@ Feature: User sends email
     And I should see "ben@example.com" in the "Email" field
     And I should see "" in the "Subject" field
     And I should see "This is a message" in the "Body" field
-    And I should see "Your message could not be sent. Please make sure you have completed all fields."
+    And I should see "Your email couldn't be sent. Subject can't be blank"
 
   
   Scenario: User attempts to skip message
@@ -86,7 +86,7 @@ Feature: User sends email
     And I should see "ben@example.com" in the "Email" field
     And I should see "This is a subject" in the "Subject" field
     And I should see "" in the "Body" field
-    And I should see "Your message could not be sent. Please make sure you have completed all fields."
+    And I should see "Your email couldn't be sent. Body can't be blank"
 
 
  Scenario: User attempts to enter invalid email
@@ -103,4 +103,4 @@ Feature: User sends email
     And I should see "ben@example" in the "Email" field
     And I should see "This is a subject" in the "Subject" field
     And I should see "This is a message" in the "Body" field
-    And I should see "Please type a valid email address"
+    And I should see "Your email couldn't be sent. Email is invalid"

@@ -3,7 +3,7 @@ Weeblog::Application.routes.draw do
 
   root to: "posts#index"
 
- resources :contact, only: [:index, :create]
+ resources :contacts, only: [:index, :create]
   resources :posts, except: [:destroy] do
     resources :comments, only: [:create]
   end
