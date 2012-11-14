@@ -1,4 +1,4 @@
-@wip
+
 Feature: User adds rss feed
 
   Scenario: User sees rss feed
