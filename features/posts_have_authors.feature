@@ -1,4 +1,4 @@
-Feature: Posts have authors
+Feature: Records have users
 
   Scenario: I can't see the post link if I'm not logged in
     Given I am on the homepage

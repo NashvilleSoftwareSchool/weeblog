@@ -52,9 +52,9 @@ Feature: User sends email
     And I should see "" in the "Email" field
     And I should see "This is a subject" in the "Subject" field
     And I should see "This is a message" in the "Body" field
-    And I should see "Your message could not be sent. Please make sure you have completed all fields."
+    And I should see "Your email couldn't be sent. Email can't be blank"
 
- 
+    
   Scenario: User attempts to skip subject
     Given I am on the homepage
     And I click "Contact Us"
