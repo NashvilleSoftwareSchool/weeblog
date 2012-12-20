@@ -6,7 +6,7 @@
     </div>
   <div class="clear"></div>
 <% end %>
-<%= link_to "Edit Post", edit_post_path(@post) %>
+<%= link_to "Edit Post", edit_post_path(@post), :id => "video" %>
 <hr />
 <ul><%= render @post.parent_comments %></ul>
 <hr />

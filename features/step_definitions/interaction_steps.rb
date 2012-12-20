@@ -43,5 +43,6 @@ Then /^I should see the image "(.*?)" in "(.*?)" the CSS$/ do |content, css|
 end
 
 Then /^I should see the video "(.*?)"$/ do |content|
-  find('a')['href'].should == content
+  page.find_link(content).visible?
+  #find('a')['href'].should == content find_link(locator)
 end
