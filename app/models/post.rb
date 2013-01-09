@@ -1,3 +1,5 @@
+require 'carrierwave/processing/mini_magick'
+
 class Post < ActiveRecord::Base
   attr_accessible :body, :title, :image, :video_title, :video_url
 
