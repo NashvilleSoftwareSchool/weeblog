@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'friendly_id'
 gem 'jquery-rails'
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'pg'
 
 # Gems used only for assets and not required
